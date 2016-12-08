@@ -8,10 +8,14 @@
         <div bar-chart data="data"></div>
 
         <form ng-submit="addEntry()">
-            <input ng-model="entry.name" placeholder="Item" />
-            <input ng-model="entry.value" placeholder="Value" />
-            <button class="fa fa-plus-square" type="submit"></button>
-            <button class="fa fa-print" type="button" id="print" ng-click="printContent()"></button>
+            <fieldset>
+                <legend>To Do Buy.</legend>
+                <input ng-model="entry.name" placeholder="Item" />
+                <input ng-model="entry.value" placeholder="Value" />
+                <button class="fa fa-plus-square" type="submit"></button>
+                <button class="fa fa-print" type="button" id="print" ng-click="printContent()"></button>
+            </fieldset>
+
         </form>
 
         <table class="table">
@@ -22,12 +26,12 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody ng-repeat="entry in data" >
+            <tbody ng-repeat="entry in data">
                 <tr>
                     <td ng-hide="isEdit">{{entry.name}}</td>
                     <td ng-hide="isEdit">{{entry.value}}</td>
-                    <td ng-show="isEdit"><input ng-model="entry.name"/></td>
-                    <td ng-show="isEdit"><input ng-model="entry.value"/></td>
+                    <td ng-show="isEdit"><input ng-model="entry.name" /></td>
+                    <td ng-show="isEdit"><input ng-model="entry.value" /></td>
                     <td>
                         <button class="fa fa-minus-square" type="button" ng-click="removeEntry(entry)"></button>
                         <button class="fa fa-pencil-square" type="button" ng-click="isEdit=!isEdit"></button>
