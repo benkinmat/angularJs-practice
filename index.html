@@ -1,41 +1,31 @@
 <!DOCTYPE html>
-<html ng-app="nameApp">
-    <head>
-        <meta charset="utf-8">
-        <title>Angular.js Example</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular.min.js"></script>
-        <script>
-            var nameApp = angular.module('nameApp', []);
-            nameApp.controller('CountryCtrl', ['$scope', '$http', function (scope, http){
-            // http.get('https://restcountries.eu/rest/v1/all').success(function(data){
-            //     scope.countries = data;
-            // });
-            http({
-              method: 'GET',
-              url: 'https://restcountries.eu/rest/v1/all'
-            }).then(function successCallback(response) {
-                // this callback will be called asynchronously
-                // when the response is available
-                scope.countries = response.data;
-              }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });
-            }]);
-        </script>
-    </head>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <title>Note AngularJs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.0/d3.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/app.factory.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.route.js"></script>
+
+    <script src="app/service/directives.js"></script>
+
+    <script src="app/country/information.controller.js"></script>
+    <script src="app/country/list.controller.js"></script>
+    <script src="app/components/note.controller.js"></script>
     
-    <body ng-controller="CountryCtrl">
-        Search: <input type="text" ng-model="query"/>
-        <table>
-            <tr>
-                <th><a href="" ng-click="sortField='name'; reverse=!reverse">Country Name</a></th>
-                <th><a href="" ng-click="sortField='region'; reverse=!reverse">Region</a></th>
-            </tr>
-            <tr ng-repeat="country in countries | filter:query | orderBy:sortField:reverse">
-                <td>{{country.name}}</td>
-                <td>{{country.region}}</td>
-            </tr>
-        </table>
-  </body>
+</head>
+
+<body>
+    <div ng-view></div>
+</body>
+
 </html>
