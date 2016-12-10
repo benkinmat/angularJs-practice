@@ -1,2 +1,2 @@
 # AngularJs-practice
-Change for the better one.
+Small change for the better one.

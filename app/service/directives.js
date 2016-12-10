@@ -41,14 +41,8 @@ app.directive("barChart", function() {
             var g = svg.append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-            var xAxisG = g.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + innerHeight + ")");
             var pieG = g.append("g")
                 .attr("transform", "translate(" + innerWidth / 2 + "," + innerHeight / 2 + ")");
-            var colorLegendG = g.append("g")
-                .attr("class", "color-legend")
-                .attr("transform", "translate(235, 20)");
 
             var xScale = d3.scaleOrdinal().range([0, innerWidth]);
             var colorScale = d3.scaleOrdinal(d3.schemeCategory10);
@@ -97,6 +91,7 @@ app.directive("barChart", function() {
                     });
 
                 slice.exit().remove();
+                pieG.exit().remove();
             }
 
 

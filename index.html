@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Note AngularJs</title>
+    <title>Make Thing Better</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
 
@@ -18,14 +18,19 @@
 
     <script src="app/service/directives.js"></script>
 
+    <script src="app/layout/shell.controller.js"></script>
+    <script src="app/layout/sidebar.controller.js"></script>
     <script src="app/country/information.controller.js"></script>
     <script src="app/country/list.controller.js"></script>
-    <script src="app/components/note.controller.js"></script>
+    <script src="app/note/note.controller.js"></script>
+    <script src="app/authenticate/login.controller.js"></script>
     
 </head>
 
 <body>
     <div ng-view></div>
+    
+    <!--<div ng-include="app/layout/shell.html"></div>-->
 </body>
 
 </html>
