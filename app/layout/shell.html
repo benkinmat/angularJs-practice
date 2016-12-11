@@ -1,10 +1,17 @@
-<!--<div ng-view></div>-->
 <div ng-controller="shell">
     <header>
-        <div ng-include="app/layout/topnav.html"></div>
+        <div ng-include="'app/layout/topnav.html'"></div>
     </header>
     
-    <section>
+    <main class="content">
+        <sidebar>
+            <div ng-include="'app/layout/sidebar.html'"></div>
+        </sidebar>
         
-    </section>
+        <section ng-view></section>
+    </main>
+    
+    <footer>
+        <div ng-include="'app/layout/footer.html'"></div>
+    </footer>
 </div>

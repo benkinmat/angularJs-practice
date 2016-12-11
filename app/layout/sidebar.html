@@ -1,0 +1,7 @@
+<div ng-controller="sidebar as vm">
+    <ul class="nav nav-tabss">
+        <li ng-repeat="r in vm.navRoutes">
+            <a href="#!{{r.url}}" ng-bind-html="r.config.settings.content | trustedHtml" ></a>
+        </li>
+    </ul>
+</div>

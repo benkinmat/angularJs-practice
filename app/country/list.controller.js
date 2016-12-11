@@ -11,4 +11,4 @@ function CountryList(scope, countries){
     countries.get().then(function(response){
       scope.countries = response.data;
     });
-};
+}

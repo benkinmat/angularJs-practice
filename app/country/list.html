@@ -1,4 +1,4 @@
-<div ng-controller="list">
+<div ng-controller="list as vm">
     Search: <input type="text" ng-model="query"/>
     <table class="table table-striped">
         <tr>
@@ -6,7 +6,8 @@
             <th><a href="" ng-click="sortField='region'; reverse=!reverse">Region</a></th>
             <th><a href="" ng-click="sortField='capital'; reverse=!reverse">Capital</a></th>
         </tr>
-        <tr ng-repeat="country in countries | filter:query | orderBy:sortField:reverse">
+        <tr ng-repeat="country in vm.countries | filter:query | orderBy:sortField:reverse">
+            hello
             <td><a href="#!/country/{{country.name}}">{{country.name}}</a></td>
             <td>{{country.region}}</td>
             <td>{{country.capital}}</td>
