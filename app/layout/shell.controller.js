@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 var shell = "shell";
 
-angular.module('app')
+angular.module('app.layout')
     .controller(shell, ShellLayout);
     
 ShellLayout.$inject = ['$rootScope'];

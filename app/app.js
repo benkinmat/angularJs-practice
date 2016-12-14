@@ -1,9 +1,8 @@
 'use strict'
 
 var app = angular.module('app', [
-        'ngRoute'
+        'app.core',
+        'app.layout',
+        'app.country',
+        'app.note'
     ]);
-    
-app.run(['$route', '$http', function($route, $http){
-    
-}]);

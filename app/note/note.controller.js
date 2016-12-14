@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
 var note = "note";
-angular.module('app')
+angular.module('app.note')
     .controller(note, Note);
 
 Note.$inject = ['$scope'];
@@ -34,5 +34,4 @@ function Note(scope) {
     scope.printContent = function() {
         window.print();
     };
-
 }

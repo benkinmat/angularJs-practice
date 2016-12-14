@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-angular.module('app')
+angular.module('app.country')
     .factory('countries', function($http){
        return {
             get: function(){

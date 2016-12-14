@@ -2,16 +2,25 @@
     <header>
         <div ng-include="'app/layout/topnav.html'"></div>
     </header>
-    
-    <main class="content">
-        <sidebar>
-            <div ng-include="'app/layout/sidebar.html'"></div>
-        </sidebar>
-        
-        <section ng-view></section>
-    </main>
-    
-    <footer>
-        <div ng-include="'app/layout/footer.html'"></div>
-    </footer>
+
+    <div ng-view></div>
+
+    <!--<footer class="footer">-->
+    <!--    <div class="navbar-fixed-bottom navbar-collapse">-->
+    <!--        <h6>Copyright 2016, Tuan Anh Ho Dien</h6>-->
+    <!--        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> . In other words, share generously but provide attribution.</p>-->
+    <!--    </div>-->
+    <!--</footer>-->
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <h6>Copyright 2016, Tuan Anh Ho Dien</h6>
+            <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> . In other words, share generously but provide attribution.</p>
+        </div>
+    </nav>
 </div>
+<!--<footer class="footer">-->
+<!--    <div class="container">-->
+<!--        <p class="text-muted">Place sticky footer content here.</p>-->
+<!--    </div>-->
+<!--</footer>-->

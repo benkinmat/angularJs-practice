@@ -1,14 +1,10 @@
-'use strict'
+'use strict';
 
 var sidebar = "sidebar";
 
-angular.module('app')
+angular.module('app.layout')
     .controller(sidebar, SideBarRoute);
     
-SideBarRoute.$inject = ['routes'];
+SideBarRoute.$inject = ['$scope'];
 
-function SideBarRoute(routes){
-    var vm = this;
-    
-    vm.navRoutes = routes;
-}
+function SideBarRoute(scope){}
