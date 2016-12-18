@@ -1,17 +1,14 @@
 <header ng-controller="topnav">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <div class="navbar-header">
-        <!--<a class="navbar-brand" href="#">Contributing</a>-->
-        
-      </div>
+      <div class="navbar-header"></div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li ng-repeat="r in topnavRoutes">
-            <a href="#!{{r.url}}">{{r.config.description}}</a>
+          <li ng-repeat="state in states">
+            <a href="#" ui-sref="{{state.sref}}">{{state.name}}</a>
           </li>
         </ul>
-        
+
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://www.facebook.com/tuananh.hodien"><i class="fa fa-facebook-official"></i></a></li>
           <li><a href="https://www.linkedin.com/in/tuananhhodien"><i class="fa fa-linkedin-square"></i></a></li>

@@ -4,13 +4,15 @@
         <form ng-submit="addEntry()">
             <fieldset>
                 <legend>To Do Buy.</legend>
-                <input ng-model="entry.name" placeholder="Item" />
-                <input ng-model="entry.value" placeholder="Value" />
+                <input ng-model="entry.name" type="text" placeholder="Item" />
+                <input ng-model="entry.value" type="number" placeholder="Value" />
                 <button class="fa fa-plus-square" type="submit"></button>
                 <button class="fa fa-print" type="button" id="print" ng-click="printContent()"></button>
             </fieldset>
 
         </form>
+
+        <br>Total: {{total}}
 
         <table class="table">
             <thead>
@@ -32,8 +34,17 @@
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>{{total}}</td>
+                    <td>
+                        <button class="fa fa-times" type="button" ng-click="removeAll()"></button>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
-        
+
         <div bar-chart data="data" id="bar-chart"></div>
     </div>
 </div>
