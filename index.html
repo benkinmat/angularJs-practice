@@ -6,39 +6,48 @@
     <title>Make Thing Better</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
     
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.0/angular-resource.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.0/d3.min.js"></script>
 
     <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
 
     <script src="app/service/filter.js"></script>
+    <script src="app/service/dataservice.js"></script>
 
     <script src="app/core/core.module.js"></script>
     <script src="app/core/core.config.js"></script>
     <script src="app/layout/layout.module.js"></script>
-    <script src="app/layout/layout.route.js"></script>
     <script src="app/layout/about.controller.js"></script>
-    <script src="app/layout/shell.controller.js"></script>
     <script src="app/layout/sidebar.controller.js"></script>
     <script src="app/layout/topnav.controller.js"></script>
     <script src="app/country/country.module.js"></script>
-    <script src="app/country/country.route.js"></script>
-    <script src="app/country/information.controller.js"></script>
-    <script src="app/country/list.controller.js"></script>
+    <script src="app/country/countryInfo.controller.js"></script>
+    <script src="app/country/countryList.controller.js"></script>
     <script src="app/note/note.module.js"></script>
-    <script src="app/note/note.route.js"></script>
     <script src="app/note/note.controller.js"></script>
-    <script src="app/note/nvDataVisualize.js"></script>
+    <script src="app/note/note-visualize.directive.js"></script>
+    <script src="app/note/noteSideBar.js"></script>
+    <script src="app/people/author.module.js"></script>
+    <script src="app/people/author.controller.js"></script>
     <script src="app/authenticate/login.controller.js"></script>
 
 </head>
 
 <body>
-    <div ng-include="'app/layout/shell.html'"></div>
+    <div ui-view="header"></div>
+
+    <div ui-view="content"></div>
+
+    <div ui-view="footer"></div>
 </body>
 
 </html>

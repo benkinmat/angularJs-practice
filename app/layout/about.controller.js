@@ -10,6 +10,6 @@ AboutLayout.$inject = ['$scope'];
 function AboutLayout(scope){
     scope.about = {
         author: 'Tuan Anh Ho Dien',
-        avatar: 'app/content/layout.avatar.jpg'
+        avatar: 'app/content/avatar.jpg'
     };
 }

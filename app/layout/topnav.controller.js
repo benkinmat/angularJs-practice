@@ -3,10 +3,19 @@
 var topnav = "topnav";
 
 angular.module('app.layout')
-    .controller(topnav, topnavRoute);
+    .controller(topnav, TopNav);
     
-topnavRoute.$inject = ['$scope', 'layout.routes'];
+TopNav.$inject = ['$scope'];
 
-function topnavRoute(scope, routes){
-    scope.topnavRoutes = routes;
+function TopNav(scope){
+    scope.states = {
+        introduction: [
+            {name: 'Home',      sref: 'app.home'},
+            {name: 'About',     sref: 'app.about'}
+        ],
+        applications: [
+            {name: "Country",   sref: 'app.countries'},
+            {name: "Note",      sref: 'app.note'}
+        ]
+    };
 }

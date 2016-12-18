@@ -1,0 +1,9 @@
+body {
+    padding-top: 50px;
+}
+
+#sideBar {
+    float: left;
+    overflow: auto;
+    height: 1000px;
+}
