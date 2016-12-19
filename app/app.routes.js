@@ -66,10 +66,22 @@ app.config(function statesConfiguration($stateProvider, $urlRouterProvider){
                 }
             },
             resolve: {
-                country: function (DataService, $stateParams) {
-                    return DataService.getCountry($stateParams.countryName).then(function(response){
-                        return response.data[0];
+                // country: function (DataService, $stateParams) {
+                //     return DataService.getCountry($stateParams.countryName).then(function(response){
+                //         return response.data[0];
+                //     });
+                // }
+                
+                 country: function (countries, $stateParams) {
+                    // return DataService.getCountry($stateParams.countryName).then(function(response){
+                    //     return response.data[0];
+                    // });
+                    var element = countries.find(function(country){
+                        return country.name === $stateParams.countryName;
                     });
+                    console.log(element);
+                    
+                    return element;
                 }
             },
             onEnter: function(){
