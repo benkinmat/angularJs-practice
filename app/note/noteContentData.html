@@ -1,0 +1,41 @@
+<form ng-submit="addEntry()">
+    <fieldset>
+        <legend>To Do Buy.</legend>
+        <input ng-model="entry.name" type="text" placeholder="Item" />
+        <input ng-model="entry.value" type="number" placeholder="Value" />
+        <button class="fa fa-plus-square" type="submit"></button>
+        <button class="fa fa-print" type="button" id="print" ng-click="printContent()"></button>
+    </fieldset>
+
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Items</th>
+        <th>Values</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="entry in data">
+    <tr>
+        <td ng-hide="isEdit">{{entry.name}}</td>
+        <td ng-hide="isEdit">{{entry.value}}</td>
+        <td ng-show="isEdit"><input type="text" ng-model="entry.name" /></td>
+        <td ng-show="isEdit"><input type="number" ng-model="entry.value" /></td>
+        <td>
+            <button class="fa fa-minus-square" type="button" ng-click="removeEntry(entry)"></button>
+            <button class="fa fa-pencil-square" type="button" ng-click="isEdit=!isEdit"></button>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>Total</td>
+        <td>{{total}}</td>
+        <td>
+            <button class="fa fa-times" type="button" ng-click="removeAll()"></button>
+        </td>
+    </tr>
+    </tfoot>
+</table>

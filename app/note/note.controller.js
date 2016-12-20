@@ -4,14 +4,19 @@ var noteCtrl = "noteCtrl";
 angular.module('app.note')
     .controller(noteCtrl, Note);
 
-Note.$inject = ['$scope'];
+Note.$inject = ['$scope', 'data'];
 
-function Note(scope) {
+function Note(scope, data) {
     // scope.total = 0;
     scope.print = false;
-    scope.data = [];
+    scope.data = data;
     scope.entry = [];
     scope.total = 0;
+    scope.states = [
+        {name: 'Content',       sref: 'app.note.data'},
+        {name: 'Search',        sref: 'app.note.filter'}
+    ];
+
     totalValues();
 
     scope.addEntry = function() {

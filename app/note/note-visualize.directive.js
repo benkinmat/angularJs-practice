@@ -9,16 +9,16 @@ angular.module('app.note')
                 data: '='
             },
             link: function postLink(scope, elements, attrs) {
-                var outerWidth = 1000;
-                var outerHeight = 500;
+                var outerWidth = 600;
+                var outerHeight = 400;
                 var margin = {
                     left: 90,
                     top: 30,
                     right: 150,
                     bottom: 30
                 };
-                var outerRadius = 150;
-                var innerRadius = 50;
+                var outerRadius = 200;
+                var innerRadius = 100;
 
                 var colorColumn = "name";
                 var pieKey = "name";
@@ -32,11 +32,15 @@ angular.module('app.note')
                     .outerRadius(outerRadius)
                     .innerRadius(innerRadius);
 
-                var svg = d3.select("#bar-chart").append("svg")
-                    .attr("width", outerWidth)
-                    .attr("height", outerHeight);
+                var svg = d3.select("#note-graph")
+                    .append("div")
+                    .classed("svg-container", true)
+                    .append("svg")
+                    .attr("preserveAspectRatio", "xMinYMin meet")
+                    .attr("viewBox", "0 0 " + " " + outerWidth + " " + outerHeight)
+                    //class to make it responsive
+                    .classed("svg-content-responsive", true);
 
-                var xScale = d3.scaleOrdinal().range([0, innerWidth]);
                 var colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
                 render(scope.data);

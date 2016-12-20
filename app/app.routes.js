@@ -66,20 +66,10 @@ app.config(function statesConfiguration($stateProvider, $urlRouterProvider){
                 }
             },
             resolve: {
-                // country: function (DataService, $stateParams) {
-                //     return DataService.getCountry($stateParams.countryName).then(function(response){
-                //         return response.data[0];
-                //     });
-                // }
-                
                  country: function (countries, $stateParams) {
-                    // return DataService.getCountry($stateParams.countryName).then(function(response){
-                    //     return response.data[0];
-                    // });
                     var element = countries.find(function(country){
                         return country.name === $stateParams.countryName;
                     });
-                    console.log(element);
                     
                     return element;
                 }
@@ -94,6 +84,34 @@ app.config(function statesConfiguration($stateProvider, $urlRouterProvider){
                 'content@': {
                     templateUrl: 'app/note/note.html',
                     controller: 'noteCtrl'
+                },
+                'graph@app.note': {
+                    templateUrl: 'app/note/noteGraph.html',
+                    controller: 'noteCtrl'
+                },
+                'description@app.note': {
+                    templateUrl: 'app/note/noteDescription.html'
+                }
+            },
+            resolve: {
+                data: function(){
+                    return [];
+                }
+            }
+        })
+        .state('app.note.data', {
+            url: '/data',
+            views: {
+                'content@app.note': {
+                    templateUrl: 'app/note/noteContentData.html'
+                }
+            }
+        })
+        .state('app.note.filter', {
+            url: '/filter',
+            views: {
+                'content@app.note': {
+                    templateUrl: 'app/note/noteContentFilter.html'
                 }
             }
         });
