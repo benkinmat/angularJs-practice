@@ -16,11 +16,4 @@ function factory($http){
             url: 'https://restcountries.eu/rest/v1/all'
         });
     }
-
-    // function getCountry(countryName){
-    //     return $http({
-    //         method: 'GET',
-    //         url: 'https://restcountries.eu/rest/v1/name/' + countryName
-    //     });
-    // }
 }
